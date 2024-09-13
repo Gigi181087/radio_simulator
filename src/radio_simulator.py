@@ -19,7 +19,7 @@ class RadioSim:
             return
 
         def set_settings(self, settings: dict) -> None:
-            
+
             if "Frequency" in settings:
                 frequency = settings["Frequency"]
                 self.frequency = frequency
@@ -215,12 +215,10 @@ class RadioSim:
 
     @classmethod
     def _radio_message(cls, sender: Client, data: bytearray) -> None:
-        print("Radio_message received data!")
 
         with cls._lock:
 
             for client in cls._clients:
-                print(client.frequency)
 
                 if not client == sender:
 
